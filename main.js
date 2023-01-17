@@ -51,8 +51,6 @@ const pigLatin = (word) => {
   }
 }
 
-
-
 // ============================================================================================
 
 // the first function called in the program to get an input from the user
