@@ -17,15 +17,39 @@ const pigLatin = (word) => {
   // Your code here
 
 
-// (Const Variable that addresses last test - It trims off white space and sets letters to lower case)
+  // (Const Variable that addresses last test - It trims off white space and sets letters to lower case)
   const trimAndLowerCaseWord = word.trim().toLowerCase()
 
-// (Const Variable to hold pig latin vowels)
+  // (Const Variable to hold pig latin vowels)
   const pLatinvowels = ['a', 'e', 'i', 'o', 'u', 'y']
-  
-// (Let Variable that takes in the trim and lower cased words)   
-let phraseArr = Array.from(trimAndLowerCaseWord)
-  
+
+  // (Let Variable that creates an array and with trimmed and lower cased words)   
+  let phraseArr = Array.from(trimAndLowerCaseWord)
+
+  // (Conditional statements used to meet tests listed below)
+
+  // (Attaches "yay" if word begins with vowel)
+  if (pLatinvowels.includes(phraseArr[0])) {
+    phraseArr.push('y', 'a', 'y')
+
+    // (Returns string)
+    return phraseArr.join('')
+
+  } else {
+
+    // (Loops through an array to see if index i is a vowel, where the vowels need to be moved to the end of the word and followed by 'ay')
+
+    for (let i = 0; i < phraseArr.length; i++) {
+      if (pLatinvowels.indexOf(phraseArr[i]) > -1) {
+        phraseArr = phraseArr.concat(phraseArr.splice(0, i))
+        phraseArr.push('a', 'y')
+
+        // (Returns string)
+        return phraseArr.join('')
+      }
+    }
+  }
+}
 
 
 
@@ -36,7 +60,7 @@ let phraseArr = Array.from(trimAndLowerCaseWord)
 // to close it ctrl + C
 const getPrompt = () => {
   rl.question('word ', (answer) => {
-    console.log( pigLatin(answer) );
+    console.log(pigLatin(answer));
     getPrompt();
   });
 }
