@@ -17,13 +17,17 @@ const pigLatin = (word) => {
   // Your code here
 
 
-// (This function addresses last test it trims off white space and sets letters to lower case)
+// (Const Variable that addresses last test - It trims off white space and sets letters to lower case)
   const trimAndLowerCaseWord = word.trim().toLowerCase()
 
-  // (Variable to hold pig latin vowels)
-  const vowels = ['a', 'e', 'i', 'o', 'u', 'y']
+// (Const Variable to hold pig latin vowels)
+  const pLatinvowels = ['a', 'e', 'i', 'o', 'u', 'y']
   
+// (Let Variable that takes in the trim and lower cased words)   
+let phraseArr = Array.from(trimAndLowerCaseWord)
   
+
+
 
 // ============================================================================================
 
